@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">PilsnerBoll</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="player">Spelare</string>
+    <string name="handicap">Handikapp</string>
+	<string name="menu_player">Spelare</string>
+	<string name="menu_rounds">Rundor</string>
+	<string name="menu_statistics">Statistik</string>
+	<string name="menu_new_round">Ny Runda</string>
+</resources>
