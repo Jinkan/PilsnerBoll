@@ -9,7 +9,7 @@ import android.widget.RelativeLayout.LayoutParams;
 
 import com.example.pilsnerboll.R;
 
-public class MainMenuButton extends Button {
+public class MainMenuButton extends Button{
 
 	
 	public enum MainMenuItemActions {
@@ -29,18 +29,12 @@ public class MainMenuButton extends Button {
 		super(context, aSet);
 	}
 	
-	public void setMainMenuButtonProperties(String text, MainMenuItemActions action, int iconId)
+	public void setMainMenuButtonProperties(OnClickListener listener, String text, MainMenuItemActions action, int iconId)
 	{
 		this.setText(text);
 		this.action=action;
+		this.setOnClickListener(listener);
 		this.setCompoundDrawablesWithIntrinsicBounds(0, 0, iconId, 0);
 		this.setBackgroundResource(R.drawable.menu_button_background);
-		this.setOnClickListener(new View.OnClickListener() {
-			
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				MainMenu.performAction(MainMenuButton.this.action);
-			}
-		});
 	}
 }

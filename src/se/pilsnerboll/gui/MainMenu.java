@@ -1,17 +1,24 @@
 package se.pilsnerboll.gui;
 
+import se.pilsnerboll.database.Player;
 import se.pilsnerboll.gui.MainMenuButton.MainMenuItemActions;
 import utilities.Convert;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.sax.StartElementListener;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
 import com.example.pilsnerboll.R;
 
-public class MainMenu extends Activity {
+public class MainMenu extends Activity implements OnClickListener{
 	private LinearLayout layout;
 	
 	
@@ -20,6 +27,7 @@ public class MainMenu extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         layout = (LinearLayout)this.findViewById(R.id.MainMenuButtonHolder);
+        Player.deleteAll(Player.class);
         createMainMenu();
         //findViewById(android.R.id.content).invalidate();
         
@@ -45,13 +53,13 @@ public class MainMenu extends Activity {
     public void addButtonToMainMenu(String text, MainMenuItemActions action, int iconId)
     {
     	MainMenuButton button = (MainMenuButton) this.getLayoutInflater().inflate(R.layout.menu_button, null);
-    	button.setMainMenuButtonProperties(text, action, iconId);
+    	button.setMainMenuButtonProperties(this, text, action, iconId);
     	LayoutParams params = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
     	params.setMargins(Convert.GetPxForDp(7), Convert.GetPxForDp(7), Convert.GetPxForDp(7), Convert.GetPxForDp(7));
     	layout.addView(button, params);
     }
     
-    public static void performAction(MainMenuItemActions action)
+    public void performAction(MainMenuItemActions action)
     {
     	switch(action)
     	{
@@ -62,9 +70,27 @@ public class MainMenu extends Activity {
     		break;
     	case STATISTICS:
     		break;
+    	case PLAYERS:
+    		startActivity(new Intent(this, PlayersActivity.class));
+    		break;
 		default:
 			break;
     	};
     }
+    
+
+	public void onClick(View arg0) {
+		// TODO Auto-generated method stub
+		MainMenuButton button = (MainMenuButton) arg0;
+		try
+		{
+			performAction(button.action);
+		}
+		catch (Exception ex)
+		{
+			int i = 1;
+		}
+		
+	}
     
 }

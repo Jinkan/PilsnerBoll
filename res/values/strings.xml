@@ -10,4 +10,14 @@
 	<string name="menu_rounds">Rundor</string>
 	<string name="menu_statistics">Statistik</string>
 	<string name="menu_new_round">Ny Runda</string>
+	<string name="no_players">Inga spelare</string>
+	<string name="add_player">Lägg till spelare</string>
+	<string name="add_players">Lägg till spelare</string>
+	<string name="player_name">Spelarens namn</string>
+	<string name="player_handicap">Spelarens handikapp</string>
+	<string name="save">Spara</string>
+	<string name="save_player_no_text">Du måste skriva namn och handikapp</string>
+	<string name="save_player_player_exists">En spelare med detta namn existerar redan</string>
+	<string name="create_round">Skapa runda</string>
+	
 </resources>

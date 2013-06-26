@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <DatePicker
+        android:id="@+id/round_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <LinearLayout 
+        android:id="@+id/playerHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/round_date"
+        >
+         <Button
+        style="@style/MenuButton"
+        android:text="@string/add_players"
+        android:onClick="AddPlayers"/>
+    </LinearLayout>
+    <Button
+        style="@style/MenuButton"
+        android:text="@string/create_round"
+        android:layout_alignParentBottom="true"
+        android:onClick="CreateRound"/>
+</RelativeLayout>

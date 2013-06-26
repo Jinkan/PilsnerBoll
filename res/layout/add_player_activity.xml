@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:padding="10dp"
+    >
+	<TextView
+        android:id="@+id/txtAddPlayerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="@string/player_name"
+         />
+    <EditText
+        android:id="@+id/editAddPlayerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/player_name"
+        android:layout_below="@id/txtAddPlayerName"/>
+    <TextView
+        android:id="@+id/txtAddPlayerHandicap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/player_handicap"
+        android:layout_below="@id/editAddPlayerName"
+         />
+    <EditText
+        android:id="@+id/editAddPlayerHandicap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/player_handicap"
+        android:inputType="numberDecimal"
+        android:layout_below="@id/txtAddPlayerHandicap"/>
+    <Button
+        android:id="@+id/buttonSavePlayer"
+        style="@style/MenuButton"
+        android:text="@string/save"
+        android:onClick="SavePlayer"
+        android:layout_alignParentBottom="true"></Button>
+    
+
+    
+
+</RelativeLayout>
